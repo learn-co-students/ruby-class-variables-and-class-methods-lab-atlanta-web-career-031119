@@ -22,4 +22,14 @@ class Song
     def self.artists
         return @@artists.uniq
     end
+    def self.genre_count
+        genre_hash={}
+        @@genres.each {|item| genre_hash[item]=@@genres.count(item)}
+        return genre_hash
+    end
+    def self.artist_count
+        artist_hash={}
+        @@artists.each {|item| artist_hash[item]=@@artists.count(item)}
+        return artist_hash
+    end
 end
