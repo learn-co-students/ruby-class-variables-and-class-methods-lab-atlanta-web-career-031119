@@ -9,23 +9,17 @@ class Song
         @artist=artist
         @genre=genre
         @@count+=1
-        if @@artists.include?(artist)
-        else
-            @@artists<<artist
-        end
-        if @@genres.include?(genre)
-        else
-            @@genres<<genre
-        end
+        @@artists<<artist
+        @@genres<<genre
     end
     attr_accessor :name, :artist, :genre
     def self.count
         return @@count
     end
     def self.genres
-        return @@genres
+        return @@genres.unique
     end
     def self.artists
-        return @@artists
+        return @@artists.unique
     end
 end
